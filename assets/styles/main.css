@@ -4,6 +4,8 @@ body {
 }
 .page {
     background: url('../../assets/images/bg.png') no-repeat center top;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
     min-height: 100vh;
     max-height: 100vh;
@@ -22,12 +24,26 @@ body {
     width: 100%;
 }
 .page-time, .page-inner, .page-likes, .page-likes-action {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
     justify-content: center;
 }
 
 .page-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
     flex-direction: column;
 }
 
@@ -48,10 +64,16 @@ body {
     background: none!important;
     cursor: pointer;
     outline: none!important;
+    -webkit-transition: all 0.2s 0s ease-in-out;
+    -o-transition: all 0.2s 0s ease-in-out;
+    -moz-transition: all 0.2s 0s ease-in-out;
     transition: all 0.2s 0s ease-in-out;
 }
 
 .page-likes-action:hover .page-likes-icon, .page-likes-action:hover .page-likes-icon-fill {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
     transform: scale(1.05);
 }
 
@@ -60,6 +82,9 @@ body {
     max-width: 4vw;
     min-height: 4vw;
     max-height: 4vw;
+    -webkit-transition: all 0.2s 0s ease-in-out;
+    -o-transition: all 0.2s 0s ease-in-out;
+    -moz-transition: all 0.2s 0s ease-in-out;
     transition: all 0.2s 0s ease-in-out;
 }
 
@@ -68,12 +93,17 @@ body {
     top: 0;
     left: 0;
     opacity: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     pointer-events: none;
 }
 
 .page-likes-action--fill .page-likes-icon-fill  {
     opacity: 1;
+    -webkit-user-select: all;
+    -moz-user-select: all;
     user-select: all;
     pointer-events: all;
 }
@@ -94,6 +124,8 @@ body {
     min-width: 15.625vw;
     max-width: 15.625vw;
     right: 3.125vw;
+
+    -o-object-fit: contain;
 
     object-fit: contain;
     display: block;
@@ -121,6 +153,9 @@ body {
 
 @media (max-width: 1199px) {
     .page-inner {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
         justify-content: space-between;
         padding: 10vh 0;
         max-height: 80vh;
