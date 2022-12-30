@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Год подкастов</title>
+    <link rel="stylesheet" href="./assets/styles/fonts.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+</head>
+<body>
+    <div class="page" id="app">
+        <div class="page-inner">
+            <img class="logo" src="./assets/images/logo.svg" alt="Logotype" >
+
+            <div class="page-time">
+                <div id="timera9762eacd266be4af981c9b01ca0e721"></div>
+            </div>
+
+            <div class="page-likes">
+                <button type="button" class="page-likes-action" id="like">
+                    <img class="page-likes-icon"
+                         src="data:image/svg+xml;base64,PHN2ZyBjbGFzcz0icGFnZS1saWtlcy1pY29uIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZmZmZiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJtOCAyLjc0OC0uNzE3LS43MzdDNS42LjI4MSAyLjUxNC44NzggMS40IDMuMDUzYy0uNTIzIDEuMDIzLS42NDEgMi41LjMxNCA0LjM4NS45MiAxLjgxNSAyLjgzNCAzLjk4OSA2LjI4NiA2LjM1NyAzLjQ1Mi0yLjM2OCA1LjM2NS00LjU0MiA2LjI4Ni02LjM1Ny45NTUtMS44ODYuODM4LTMuMzYyLjMxNC00LjM4NUMxMy40ODYuODc4IDEwLjQuMjggOC43MTcgMi4wMUw4IDIuNzQ4ek04IDE1Qy03LjMzMyA0Ljg2OCAzLjI3OS0zLjA0IDcuODI0IDEuMTQzYy4wNi4wNTUuMTE5LjExMi4xNzYuMTcxYTMuMTIgMy4xMiAwIDAgMSAuMTc2LS4xN0MxMi43Mi0zLjA0MiAyMy4zMzMgNC44NjcgOCAxNXoiLz4KICAgICAgICAgICAgICAgIDwvc3ZnPg==" alt="">
+                    <img src="data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IndoaXRlIiBjbGFzcz0iYmkgYmktaGVhcnQtZmlsbCIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04IDEuMzE0QzEyLjQzOC0zLjI0OCAyMy41MzQgNC43MzUgOCAxNS03LjUzNCA0LjczNiAzLjU2Mi0zLjI0OCA4IDEuMzE0eiIvPgo8L3N2Zz4=
+" alt=""
+                         class="page-likes-icon-fill">
+                    <span class="page-likes-text">732</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="module">
+        fetch('https://api.ipdata.co?api-key=ae58b03148e1d6c06987656c860dc29f15307a81efb8bb42d362d2af')
+            .then((response) => response.json())
+            .then((data) => {
+                console.log({
+                    ip: data.ip,
+                    country_code: data.country_code,
+                    latitude: data.latitude,
+                    longitude: data.longitude,
+                    flag: data.flag,
+                })
+            });
+        const like = document.getElementById('like');
+        if (like) {
+            like.addEventListener('click', () => {
+                if (like.className.indexOf('--fill') === -1) {
+                    like.classList.add('page-likes-action--fill');
+                } else {
+                    console.log(like.className);
+                }
+            });
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            var _id = "a9762eacd266be4af981c9b01ca0e721";
+            console.log(document.getElementById("timer" + _id));
+            var _t = document.createElement("script");
+            _t.src = "//megatimer.ru/timer/timer.min.js?v=1";
+            var _f = function (_k) {
+                var l = new MegaTimer(_id, {
+                    view: [1, 1, 1, 1],
+                    type: { currentType: "1", params: { usertime: true, tz: "3", utc: 1679613780000 } },
+                    design: {
+                        type: "plate",
+                        params: {
+                            round: "0",
+                            background: "opacity",
+                            effect: "slide",
+                            space: "2",
+                            "separator-margin": "0",
+                            "number-font-family": { family: "Montserrat" },
+                            "number-font-size": "16",
+                            "number-font-color": "#ffffff",
+                            padding: "0",
+                            "separator-on": true,
+                            "separator-text": ":",
+                            "text-on": true,
+                            "text-font-family": { family: "Montserrat" },
+                            "text-font-size": "12",
+                            "text-font-color": "#ffffff",
+                        },
+                    },
+                    designId: 4,
+                    theme: "white",
+                    width: 362,
+                    height: 74,
+                });
+                if (_k != null) l.run();
+            };
+            _t.onload = _f;
+            _t.onreadystatechange = function () {
+                if (_t.readyState == "loaded") _f(1);
+            };
+            var _h = document.head || document.getElementsByTagName("head")[0];
+            _h.appendChild(_t);
+        }.call(this));
+    </script>
+
+</body>
+</html>
