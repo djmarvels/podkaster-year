@@ -49,8 +49,6 @@
             like.addEventListener('click', () => {
                 if (like.className.indexOf('--fill') === -1) {
                     like.classList.add('page-likes-action--fill');
-                } else {
-                    console.log(like.className);
                 }
             });
         }
@@ -60,7 +58,6 @@
     <script type="text/javascript">
         (function () {
             var _id = "a9762eacd266be4af981c9b01ca0e721";
-            console.log(document.getElementById("timer" + _id));
             var _t = document.createElement("script");
             _t.src = "//megatimer.ru/timer/timer.min.js?v=1";
             var _f = function (_k) {
@@ -92,7 +89,27 @@
                     width: 362,
                     height: 74,
                 });
-                if (_k != null) l.run();
+                if (_k != null) {
+                    l.run();
+                    queueMicrotask(() => {
+                        const daysText = document.getElementById(`timer-text-${_id}-days`);
+                        const days = document.getElementById(`timer-number-value-${_id}-days`);
+                        if (daysText && days) {
+                            const daysNumber = Number(days.innerHTML);
+                            if (Number.isInteger(daysNumber)) {
+                                const plural = (word, num) => {
+                                    var forms = word.split('_');
+                                    return num % 10 === 1 && num % 100 !== 11
+                                        ? forms[0]
+                                        : num % 10 >= 2 && num % 10 <= 4 && (num % 100 < 10 || num % 100 >= 20)
+                                            ? forms[1]
+                                            : forms[2];
+                                };
+                                daysText.innerHTML = plural('день_дня_дней', daysNumber);
+                            }
+                        }
+                    });
+                }
             };
             _t.onload = _f;
             _t.onreadystatechange = function () {
